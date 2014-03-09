@@ -1,0 +1,6 @@
+.lang
+    for locale in locales
+        if i18n.getLocale() == locale.id
+            span.selected=locale.name
+        else
+            a(href=getLocaleUrl(locale.id))=locale.name

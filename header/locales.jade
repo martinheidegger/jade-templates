@@ -1,0 +1,3 @@
+for locale in locales
+    if i18n.getLocale() != locale.id
+        link(rel="alternate", href=getLocaleUrl(locale.id) hreflang=locale.id)

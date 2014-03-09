@@ -1,0 +1,16 @@
+meta(property="og:title", content=site_title)
+meta(property="og:site_name", content=__('title'))
+meta(property="og:description", content=__('description'))
+meta(property="og:locale", content="ja_JP")
+if facebook.image
+    meta(property="og:image", content=facebook.image)
+else if devMode
+	-console.warn("No image for facebook set.");
+if facebook.admins
+    meta(property="fb:admins", content=facebook.admins)
+else if devMode
+	-console.warn("No admins for facebook set.");
+if facebook.app_id
+    meta(property="fb:app_id", content=facebook.app_id)
+else if devMode
+	-console.warn("No app_id for facebook set.");
