@@ -1,7 +1,7 @@
 if mailchimp
-    form(action="http://"+mailchimp.server+"/subscribe/post?u="+mailchimp.user+"&amp;id="+mailchimp.list, method="post", name="subscribe", target="_blank")
+    form(action="http://" + mailchimp.server + "/subscribe/post?u=" + mailchimp.user + "&amp;id=" + mailchimp.list, method="post", name="subscribe", target="_blank")
         input(type="email", name="EMAIL", class="email", placeholder=__('email address'), required, tabindex=1)
         input(type="submit", value=__('Subscribe'), name="subscribe", class="button", tabindex=2, disabled=true)
 
         div(style="position: absolute; left: -5000px;")
-            input(type="text", name="b_"+mailchimp.user+"_"+mailchimp.list, tabindex="-1")
+            input(type="text", name="b_" + mailchimp.user + "_" + mailchimp.list, tabindex="-1")
