@@ -9,12 +9,12 @@ html(lang=i18n.getLocale())
             meta(name="viewport", content="width=device-width, initial-scale=1")
             yield
 
-        include header/facebook
         include header/seo
+        include header/facebook
         include header/locales
 
         block header_styles
-            link(href="/stylus/index.css", rel="stylesheet")
+            link(href="/css/index.css", rel="stylesheet")
             yield
 
         block header_scripts
