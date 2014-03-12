@@ -10,7 +10,7 @@ if facebook
     if facebook.page
         meta(property="article:publisher", content=facebook.page)
     if facebook.image
-        meta(property="og:image", content=facebook.image)
+        meta(property="og:image", content=domain+facebook.image)
     else if devMode
         -console.warn("Warning: No image for facebook set.");
     if facebook.admins
