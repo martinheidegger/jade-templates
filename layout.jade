@@ -1,5 +1,9 @@
+block prepare
 html(lang=getLocale())
-    -var site_title = __('title')+" | "+__('tagline')
+    if !site_title
+        - var site_title = __('title')
+    if site_name
+        - site_title += " | " + site_name
     head
         meta(charset="utf-8")
         title=site_title
