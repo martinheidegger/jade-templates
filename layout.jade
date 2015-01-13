@@ -1,3 +1,7 @@
+- if (!getLocale) { getLocale = function () { return lang || "en"; } }
+- if (!__) { __ = function (key) { return (keys ? keys[key] : false) || ("?" + key + "?"); } }
+- if (!getLocaleUrl) { getLocaleUrl = function (slug) { return "/" + (lang || "") + slug; } }
+- if (!locales) locales = []
 block prepare
 doctype html
 html(lang=getLocale())
@@ -24,6 +28,8 @@ html(lang=getLocale())
             link(href="/css/index.css", rel="stylesheet")
 
         block header_scripts
+
+        block header_ext
     body
         block content
         block scripts
@@ -35,5 +41,5 @@ html(lang=getLocale())
                 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
                 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-                ga('create', '#{googleAnalytics.account}', '#{domain}');
+                       ga('create', '#{googleAnalytics.account}', '#{domain}');
                 ga('send', 'pageview');
