@@ -3,10 +3,11 @@ if facebook
     meta(property="og:site_name", content=__('title'))
     meta(property="og:description", content=description || __('description'))
     meta(property="og:url", content=facebook.url || getLocaleUrl(""))
-    meta(property="og:locale", content=fbLocale(getLocale()))
-    for subLocale in locales
-        if getLocale() != subLocale.id
-            link(rel="og:locale:alternate", content=fbLocale(subLocale.id))
+    if facebook.supportsLocales
+        meta(property="og:locale", content=fbLocale(getLocale()))
+        for subLocale in locales
+            if getLocale() != subLocale.id
+                link(rel="og:locale:alternate", content=fbLocale(subLocale.id))
     if facebook.page
         meta(property="article:publisher", content=facebook.page)
     if facebook.image
