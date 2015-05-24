@@ -1,7 +1,7 @@
 - scope = arguments[0]
 - if (!getLocale) { getLocale = function () { return lang || "en"; } }
 - if (!__) { __ = function (key) { return (keys ? keys[key] : false) || scope[key] || ("?" + key + "?"); } }
-- if (!getLocaleUrl) { getLocaleUrl = function (slug) { return "/" + (lang || "") + slug; } }
+- if (!getLocaleUrl) { getLocaleUrl = function (lang, slug) { return "/" + (lang || "") + slug; } }
 - if (!locales) locales = []
 block prepare
 doctype html

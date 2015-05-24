@@ -2,7 +2,7 @@ if facebook
     meta(property="og:title", content=site_title)
     meta(property="og:site_name", content=__('title'))
     meta(property="og:description", content=description || __('description'))
-    meta(property="og:url", content=facebook.url || getLocaleUrl(""))
+    meta(property="og:url", content=facebook.url || getLocaleUrl())
     if facebook.supportsLocales
         meta(property="og:locale", content=fbLocale(getLocale()))
         for subLocale in locales
