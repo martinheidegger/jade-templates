@@ -1,6 +1,7 @@
 .lang
     for subLocale in locales
         if getLocale() == subLocale.id
-            span.selected=subLocale.name
+            if !hideSelectedLanguage
+                span.selected=subLocale.name||subLocale.id
         else
             a(href=getLocalePath(subLocale.id))=subLocale.name

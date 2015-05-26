@@ -1,26 +1,26 @@
-- scope = arguments[0]
+- scope = arguments[0];
 - if (!getLocale) {
 -   getLocale = function (_lang) {
 -     return _lang || lang || defaultLang || 'en';
--   }
+-   };
 - }
 - if (!__) {
 -   __ = function (key) {
--     var keysLevel = keys
--       , scopeLevel = scope
--       , keyParts = key.split(".")
--       , value
--       , sub
--       , part
+-     var keysLevel = keys;
+-     var scopeLevel = scope;
+-     var keyParts = key.split(".");
+-     var value;
+-     var sub;
+-     var part;
 -     while (!value && (keysLevel || scopeLevel) && keyParts.length > 0) {
--       sub = keyParts.join('.')
--       part = keyParts.shift()
--       value = (keysLevel && keysLevel[sub]) || (scopeLevel && scopeLevel[sub])
--       keysLevel = keysLevel && keysLevel[part]
--       scopeLevel = scopeLevel && scopeLevel[part]
+-       sub = keyParts.join('.');
+-       part = keyParts.shift();
+-       value = (keysLevel && keysLevel[sub]) || (scopeLevel && scopeLevel[sub]);
+-       keysLevel = keysLevel && keysLevel[part];
+-       scopeLevel = scopeLevel && scopeLevel[part];
 -     }
 -     if (!value) {
--       return ("?" + key + "?")
+-       return ("?" + key + "?");
 -     }
 -     return value;
 -   }
@@ -28,28 +28,28 @@
 - if (!getSlug) {
 -   getSlug = function (targetSlug) {
 -     if (!targetSlug) {
--       targetSlug = slug
+-       targetSlug = slug;
 -     }
 -     if (!showIndexInSlug && /(\/|^)index.html$/.test(targetSlug)) {
--       targetSlug = targetSlug.substr(0, targetSlug.length - 'index.html'.length)  
+-       targetSlug = targetSlug.substr(0, targetSlug.length - 'index.html'.length);
 -     }
 -     return targetSlug
 -   }
 - }
 - if (!getLocaleUrl) {
 -   getLocaleUrl = function (lang, targetSlug) {
--     lang = getLocale(lang)
--     targetSlug = getSlug(targetSlug)
--     var targetDomain = domainUrls && domainUrls[lang]
+-     lang = getLocale(lang);
+-     targetSlug = getSlug(targetSlug);
+-     var targetDomain = domainUrls && domainUrls[lang];
 -     if (targetDomain) {
--       return targetDomain + '/' + targetSlug
+-       return targetDomain + '/' + targetSlug;
 -     }
 -     if (domain) {
 -       return domain
 -           + (lang && (defaultLang || 'en') != lang ? '/' + lang : '')
 -           + '/' + targetSlug;
 -     }
--     throw Error("You need to supply a `domain` for the full URL")
+-     throw Error("You need to supply a `domscoain` for the full URL");
 -   }
 - }
 - if (!getLocalePath) {
@@ -65,7 +65,7 @@
 -   }
 - }
 - if (!locales) {
--   locales = []
+-   locales = [];
 - }
 block prepare
 doctype html
