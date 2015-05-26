@@ -3,7 +3,7 @@ if facebook
     meta(property="og:site_name", content=__('title'))
     meta(property="og:description", content=description || __('description'))
     meta(property="og:url", content=facebook.url || getLocaleUrl())
-    if facebook.supportsLocales
+    if typeof fbLocale == 'function'
         meta(property="og:locale", content=fbLocale(getLocale()))
         for subLocale in locales
             if getLocale() != subLocale.id
@@ -11,7 +11,7 @@ if facebook
     if facebook.page
         meta(property="article:publisher", content=facebook.page)
     if facebook.image
-        meta(property="og:image", content=domain+facebook.image)
+        meta(property="og:image", content=getLocaleUrl(null, facebook.image))
     else if devMode
         -console.warn("Warning: No image for facebook set.");
     if facebook.admins
