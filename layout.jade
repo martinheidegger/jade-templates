@@ -12,14 +12,14 @@
 -     var value;
 -     var sub;
 -     var part;
--     while (!value && (keysLevel || scopeLevel) && keyParts.length > 0) {
+-     while ((typeof value !== 'string') && (keysLevel || scopeLevel) && keyParts.length > 0) {
 -       sub = keyParts.join('.');
 -       part = keyParts.shift();
 -       value = (keysLevel && keysLevel[sub]) || (scopeLevel && scopeLevel[sub]);
 -       keysLevel = keysLevel && keysLevel[part];
 -       scopeLevel = scopeLevel && scopeLevel[part];
 -     }
--     if (!value) {
+-     if (typeof value !== 'string') {
 -       return ("?" + key + "?");
 -     }
 -     return value;
